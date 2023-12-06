@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.Map;
 
-@Component
 public class Facade {
     private static Logger logger = LogManager.getLogger(Facade.class);
 
