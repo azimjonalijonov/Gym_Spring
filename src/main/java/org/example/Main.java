@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
  public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AplicationConfiguration.class);
-    Facade facade =context.getBean(Facade.class);
-    facade.readAllUsers();
-    facade.readAllTrainees();
-facade.readALLTrainers();
-facade.readAllTrainings();;
-facade.readAllTrainingTypes();
+        Facade facade =context.getBean(Facade.class);
+        facade.readAllUsers();
+        facade.readAllTrainees();
+        facade.readALLTrainers();
+        facade.readAllTrainings();;
+        facade.readAllTrainingTypes();
 
     }
 }
