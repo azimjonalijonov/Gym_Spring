@@ -1,13 +1,19 @@
 plugins {
     id 'java'
-//    id 'com.diffplug.gradle.spotless' version '4.5.1'
+    id 'io.spring.javaformat' version '0.0.27'
+
 }
 
-//spotless {
-//    java {
-//        googleJavaFormat()
-//    }
-//}
+java {
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java'
+            }
+        }
+    }
+}
+
 
 group 'org.example'
 version '1.0-SNAPSHOT'
