@@ -1,9 +1,7 @@
-package org.example.service.implementation;
+package org.example.training;
 
 
-import org.example.dao.implementation.TrainingDAO;
-import org.example.domain.Training;
-import org.example.service.BaseService;
+import org.example.interfaces.BaseService;
 import org.example.util.validation.impl.TrainingErrorValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

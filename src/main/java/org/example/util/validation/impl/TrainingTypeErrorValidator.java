@@ -1,6 +1,6 @@
 package org.example.util.validation.impl;
 
-import org.example.domain.TrainingType;
+import org.example.trainingType.TrainingType;
 import org.example.util.exception.ValidatorException;
 import org.example.util.validation.Validator;
 import org.springframework.stereotype.Component;

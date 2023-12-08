@@ -1,16 +1,26 @@
 package org.example.storage;
 
-import org.example.domain.*;
+import org.example.trainee.Trainee;
+import org.example.trainer.Trainer;
+import org.example.training.Training;
+import org.example.trainingType.TrainingType;
+import org.example.user.User;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-@Component
+@Service
 public class InMemoryStorage {
     private static Map<Long, Trainee> traineeStorage =new HashMap<>();
     private static Map<Long, Trainer> trainerStorage=new HashMap<>();
     private static Map<Long, Training> trainingStorage=new HashMap<>();
     private static Map<Long, TrainingType> TrainingTypeStorage=new HashMap<>();
+
+    public InMemoryStorage() {
+    }
+
     private static Map<Long, User> UserStorage=new HashMap<>();
 
     public static Map<Long, Trainee> getTraineeStorage() {

@@ -1,8 +1,6 @@
-package org.example.service.implementation;
+package org.example.trainee;
 
-import org.example.dao.implementation.TraineeDAO;
-import org.example.domain.Trainee;
-import org.example.service.BaseService;
+import org.example.interfaces.BaseService;
 import org.example.util.exception.ValidatorException;
 import org.example.util.validation.impl.TraineeErrorValidator;
 import org.springframework.stereotype.Service;

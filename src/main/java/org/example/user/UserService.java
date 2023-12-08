@@ -1,9 +1,7 @@
-package org.example.service.implementation;
+package org.example.user;
 
 
-import org.example.dao.implementation.UserDAO;
-import org.example.domain.User;
-import org.example.service.BaseService;
+import org.example.interfaces.BaseService;
 import org.example.util.exception.ValidatorException;
 import org.example.util.validation.impl.UserErrorValidator;
 import org.springframework.beans.factory.annotation.Autowired;

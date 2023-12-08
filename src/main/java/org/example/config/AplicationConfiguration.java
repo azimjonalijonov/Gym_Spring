@@ -1,17 +1,30 @@
 package org.example.config;
 
 import org.example.Facade;
-import org.example.dao.implementation.*;
-import org.example.domain.*;
-import org.example.service.implementation.*;
+import org.example.storage.InMemoryStorage;
+import org.example.trainee.Trainee;
+import org.example.trainee.TraineeDAO;
+import org.example.trainee.TraineeService;
+import org.example.trainer.Trainer;
+import org.example.trainer.TrainerDAO;
+import org.example.trainer.TrainerService;
+import org.example.training.Training;
+import org.example.training.TrainingDAO;
+import org.example.training.TrainingService;
+import org.example.trainingType.TrainingType;
+import org.example.trainingType.TrainingTypeDAO;
+import org.example.trainingType.TrainingTypeService;
+import org.example.user.User;
+import org.example.user.UserDAO;
+import org.example.user.UserService;
 import org.example.util.DataSource;
 import org.example.util.validation.impl.*;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import java.security.PublicKey;
-
 @Configuration
+
 public class AplicationConfiguration {
     @Bean
     public DataSource get(){
@@ -49,6 +62,10 @@ public class AplicationConfiguration {
     public UserDAO userDAO(){
         return new UserDAO();
 
+    }
+    @Bean
+    public InMemoryStorage inMemoryStorage(){
+        return new InMemoryStorage();
     }
 
     @Bean

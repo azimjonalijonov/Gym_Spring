@@ -2,11 +2,17 @@ package org.example;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.domain.*;
-import org.example.service.implementation.*;
-import org.springframework.stereotype.Component;
+import org.example.trainee.Trainee;
+import org.example.trainee.TraineeService;
+import org.example.trainer.Trainer;
+import org.example.trainer.TrainerService;
+import org.example.training.Training;
+import org.example.training.TrainingService;
+import org.example.trainingType.TrainingType;
+import org.example.trainingType.TrainingTypeService;
+import org.example.user.User;
+import org.example.user.UserService;
 
-import javax.annotation.PostConstruct;
 import java.util.Map;
 
 public class Facade {

@@ -1,9 +1,7 @@
-package org.example.service.implementation;
+package org.example.trainingType;
 
 
-import org.example.dao.implementation.TrainingTypeDAO;
-import org.example.domain.TrainingType;
-import org.example.service.BaseService;
+import org.example.interfaces.BaseService;
 import org.example.util.exception.ValidatorException;
 import org.example.util.validation.impl.TrainingTypeErrorValidator;
 import org.springframework.beans.factory.annotation.Autowired;

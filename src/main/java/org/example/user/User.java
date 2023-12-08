@@ -1,6 +1,4 @@
-package org.example.domain;
-
-import org.springframework.stereotype.Component;
+package org.example.user;
 
 import java.util.Objects;
 

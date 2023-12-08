@@ -1,9 +1,9 @@
-package org.example.dao.implementation;
+package org.example.user;
 
-import org.example.dao.BaseDAO;
-import org.example.domain.User;
+import org.example.interfaces.BaseDAO;
 import org.example.storage.InMemoryStorage;
 import org.example.util.exception.TraineeNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -12,6 +12,15 @@ import java.util.Random;
 @Repository
 public class UserDAO implements BaseDAO<User> {
 
+    private  InMemoryStorage inMemoryStorage;
+    @Autowired
+    public  void  setInMemoryStorage(InMemoryStorage inMemoryStorage){
+        this.inMemoryStorage=inMemoryStorage;
+    }
+
+    public UserDAO() {
+    }
+
     @Override
     public Map<Long, User> readAll() {
         return InMemoryStorage.getUserStorage();
@@ -19,13 +28,13 @@ public class UserDAO implements BaseDAO<User> {
 
     @Override
     public User readById(Long id) {
-        Map<Long, User> userMap = InMemoryStorage.getUserStorage();
+        Map<Long, User> userMap = inMemoryStorage.getUserStorage();
         return userMap.get(id);
     }
 
     @Override
     public User create(User entity) {
-        Map<Long, User> userMap = InMemoryStorage.getUserStorage();
+        Map<Long, User> userMap = inMemoryStorage.getUserStorage();
         String username =generateUsername(entity.getFirstName(), entity.getLastName());
         String password =generatePassword();
         entity.setUsername(username);
@@ -40,14 +49,14 @@ public class UserDAO implements BaseDAO<User> {
     @Override
     public User update(User entity) {
         Long id = entity.getId();
-        Map<Long, User> userMap =InMemoryStorage.getUserStorage();
+        Map<Long, User> userMap =inMemoryStorage.getUserStorage();
         userMap.put(id, entity);
         return entity;
     }
 
     @Override
     public boolean deleteById(Long id) {
-        Map<Long, User> userMap = InMemoryStorage.getUserStorage();
+        Map<Long, User> userMap = inMemoryStorage.getUserStorage();
         if (existById(id)) {
             userMap.remove(id);
             return true;
@@ -57,7 +66,7 @@ public class UserDAO implements BaseDAO<User> {
 
     @Override
     public boolean existById(Long id) {
-        Map<Long, User> userMap = InMemoryStorage.getUserStorage();
+        Map<Long, User> userMap = inMemoryStorage.getUserStorage();
         return userMap.containsKey(id);
     }
     private static <K, V> K getLastKey(Map<K, V> map) {
@@ -72,7 +81,7 @@ public class UserDAO implements BaseDAO<User> {
 
   private String generateUsername(String firstName, String lastName  ){
         String username =firstName+"."+lastName;
-      Map<Long, User> userMap = InMemoryStorage.getUserStorage();
+      Map<Long, User> userMap = inMemoryStorage.getUserStorage();
          int serialNum =0;
       for (Long i:userMap.keySet()
            ) {

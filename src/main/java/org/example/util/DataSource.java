@@ -3,10 +3,12 @@ package org.example.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.Facade;
-import org.example.domain.*;
 import org.example.storage.InMemoryStorage;
-import org.springframework.beans.factory.annotation.Value;
+import org.example.trainee.Trainee;
+import org.example.trainer.Trainer;
+import org.example.training.Training;
+import org.example.trainingType.TrainingType;
+import org.example.user.User;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 

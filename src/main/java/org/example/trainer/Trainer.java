@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.trainer;
 
 import org.springframework.stereotype.Component;
 
